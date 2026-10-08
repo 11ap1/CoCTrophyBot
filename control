@@ -1,0 +1,8 @@
+Package: com.11ap1.coctrophybot
+Name: CoCTrophyBot
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Maintainer: 11ap1
+Author: 11ap1
+Section: Tweaks
