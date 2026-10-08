@@ -67,8 +67,8 @@
 //       INCLUDE SECTION
 //
 
-#ifndef STB_PACK_INCLUDE_STB_RECT_PACK_H
-#define STB_PACK_INCLUDE_STB_RECT_PACK_H
+#ifndef STB_INCLUDE_STB_RECT_PACK_H
+#define STB_INCLUDE_STB_RECT_PACK_H
 
 #define STB_RECT_PACK_VERSION  1
 
@@ -88,7 +88,7 @@ typedef struct stbrp_rect    stbrp_rect;
 
 typedef int            stbrp_coord;
 
-#define STBRP_MAXVAL  0x7fffffff
+#define STBRP__MAXVAL  0x7fffffff
 // Mostly for internal use, but this is the maximum supported coordinate value.
 
 STBRP_DEF int stbrp_pack_rects (stbrp_context *context, stbrp_rect *rects, int num_rects);
@@ -218,22 +218,22 @@ struct stbrp_context
 #endif
 
 #ifdef _MSC_VER
-#define STBRP_NOTUSED(v)  (void)(v)
-#define STBRP_CDECL       __cdecl
+#define STBRP__NOTUSED(v)  (void)(v)
+#define STBRP__CDECL       __cdecl
 #else
-#define STBRP_NOTUSED(v)  (void)sizeof(v)
-#define STBRP_CDECL
+#define STBRP__NOTUSED(v)  (void)sizeof(v)
+#define STBRP__CDECL
 #endif
 
 enum
 {
-   STBRP_INIT_skyline = 1
+   STBRP__INIT_skyline = 1
 };
 
 STBRP_DEF void stbrp_setup_heuristic(stbrp_context *context, int heuristic)
 {
    switch (context->init_mode) {
-      case STBRP_INIT_skyline:
+      case STBRP__INIT_skyline:
          STBRP_ASSERT(heuristic == STBRP_HEURISTIC_Skyline_BL_sortHeight || heuristic == STBRP_HEURISTIC_Skyline_BF_sortHeight);
          context->heuristic = heuristic;
          break;
